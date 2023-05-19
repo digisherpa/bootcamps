@@ -4,24 +4,24 @@ class AddCharacter extends Component {
     constructor(props) {
         super(props);
         this.character = {
-            name: 'Sivraj',
-            job: 'Bootcamper'
+            name: '',
+            job: ''
         }
 
         this.state = this.character;
     }
 
     handleChange = event => {
-        const {ename, evalue} = event.target;
+        const {name, value} = event.target;
         this.setState({
-            [ename]: evalue
+            [name]: value
         })
     }
 
     addCharacter = (event) => {
         event.preventDefault();
         this.props.addCharacter(this.state);
-        //this.setState(this.character);
+        this.setState(this.character);
     }
 
     render() {
